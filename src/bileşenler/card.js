@@ -69,7 +69,7 @@ const Card = (makale) => {
   const cardEkleyici = (secici) => {
     axios.get("http://localhost:5001/api/makaleler")
     .then((response)=>{
-      
+      console.log(response);
       const makaleler = response.data.makaleler;
       const makaleDizisi = [];
    

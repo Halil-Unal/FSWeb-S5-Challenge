@@ -27,7 +27,7 @@
     tekno.classList.add("tab");
     tekno.textContent = konu.konular[2];
     tdiv.append(java, boost, tekno);
-    return tdiv; // burada div öğesi döndürüldü
+    return tdiv; 
   };
 
 const tabEkleyici = (secici) => {
@@ -42,6 +42,7 @@ const tabEkleyici = (secici) => {
   
   axios.get("http://localhost:5001/api/konular")
     .then((response) => {
+      console.log(response);
       const konu = response.data;
       const tdiv = Tablar(konu); 
       const secilenElem = document.querySelector(secici);
