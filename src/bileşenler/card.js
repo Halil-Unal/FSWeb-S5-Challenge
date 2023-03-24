@@ -69,13 +69,14 @@ const Card = (makale) => {
   const cardEkleyici = (secici) => {
     axios.get("http://localhost:5001/api/makaleler")
     .then((response)=>{
+      
       const makaleler = response.data.makaleler;
       const makaleDizisi = [];
-
+   
       for (let key in makaleler) {
         makaleDizisi.push(...makaleler[key]);
+      
       }
-
       const cardDivDizisi = makaleDizisi.map(Card);
   
       const secilenElem = document.querySelector(secici);
