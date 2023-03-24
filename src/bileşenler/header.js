@@ -1,4 +1,25 @@
-const Header = (baslik, tarih, yazi) => {
+//const news =document.getElementsByClassName("header-container")
+const Header = (baslikMetni, tarihMetni, yaziMetni) => {
+  const hdiv = document.createElement("div");
+  hdiv.classList.add("header");
+
+  const tarih = document.createElement("span");
+  tarih.classList.add("date");
+  tarih.textContent = tarihMetni;
+  hdiv.appendChild(tarih);
+
+  const baslik = document.createElement("h1");
+  baslik.textContent = baslikMetni;
+  hdiv.appendChild(baslik);
+
+  const yazi = document.createElement("span");
+  yazi.classList.add("temp");
+  yazi.textContent = yaziMetni;
+  hdiv.appendChild(yazi);
+
+  return hdiv;
+};
+
   // GÖREV 1
   // ---------------------
   // Bu fonksiyon argüman olarak `baslik`, `tarih` ve `temp` alarak aşağıdaki yapıyı döndürecek.
@@ -11,7 +32,7 @@ const Header = (baslik, tarih, yazi) => {
   //    <span class="temp">{ yazi }</span>
   //  </div>
   //
-}
+
 
 const headerEkleyici = (secici) => {
   // GÖREV 2
@@ -23,7 +44,11 @@ const headerEkleyici = (secici) => {
 
   // İPUCU: querySelector bir string alabilir (bknz: querySelector("#wrapper")) 
   // fakat aynı zamanda bir değişken de alabilir (bknz: querySelector(secici))
- 
-}
+  const header = Header("TEKNOLOJİ ZAMANI", "11 KASIM 2022", "sağdaki yazı");
+
+  const seciliElement = document.querySelector(secici);
+  seciliElement.appendChild(header);
+};
+
 
 export { Header, headerEkleyici }
